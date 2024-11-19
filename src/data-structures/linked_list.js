@@ -72,6 +72,37 @@ class LinkedList {
     return this;
   }
 
+  pushAtIndex(data, index){
+    if (index < 0 || index >= this._length) {
+      throw new RangeError('Index out of range');
+    }
+
+    const newNode = new Node(data);
+
+    if(index === 0){
+      // Insert at the beginning
+      newNode.next = this._head;
+      this._head = newNode;
+    } else {
+      // Insert at the given index
+      let current = this._head;
+      let previous = null;
+      let currentIndex = 0;
+
+      while(currentIndex < index){
+        previous = current;
+        current = current.next;
+        currentIndex += 1;
+      }
+
+      newNode.next = current;
+      previous.next = newNode;
+    }
+
+    this._length += 1;
+    return this;
+  }
+
   /**
    * Pops node from the end of Linked List
    * @return {LinkedList} `this`
