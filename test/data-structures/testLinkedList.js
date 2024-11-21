@@ -105,7 +105,7 @@ describe('Linked List', () => {
     assert.deepStrictEqual(node.value, { t: 1 });
   });
 
-  it('should add node at index', ()=>{
+  it('should add node at index', () => {
     const inst = new LinkedList();
 
     inst.push(1);
@@ -116,7 +116,7 @@ describe('Linked List', () => {
     assert.deepStrictEqual(node.value, 3);
   });
 
-  it('should add at beginning when index = 0', ()=>{
+  it('should add at beginning when index = 0', () => {
     const inst = new LinkedList();
 
     inst.push(2);
@@ -125,9 +125,9 @@ describe('Linked List', () => {
     inst.pushAtIndex(0, 0);
     const node = inst.getNodeByIndex(0);
     assert.deepStrictEqual(node.value, 0);
-  })
+  });
 
-  it('should throw error if index out of bound while adding node', ()=>{
+  it('should throw error if index out of bound while adding node', () => {
     const inst = new LinkedList();
 
     inst.push(1);

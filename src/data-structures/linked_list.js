@@ -72,14 +72,14 @@ class LinkedList {
     return this;
   }
 
-  pushAtIndex(data, index){
+  pushAtIndex(data, index) {
     if (index < 0 || index >= this._length) {
       throw new RangeError('Index out of range');
     }
 
     const newNode = new Node(data);
 
-    if(index === 0){
+    if (index === 0) {
       // Insert at the beginning
       newNode.next = this._head;
       this._head = newNode;
@@ -89,7 +89,7 @@ class LinkedList {
       let previous = null;
       let currentIndex = 0;
 
-      while(currentIndex < index){
+      while (currentIndex < index) {
         previous = current;
         current = current.next;
         currentIndex += 1;
